@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<article class="post">
+
+  <h1>{{ page.title }}</h1>
+  <p class="post-meta">{{ page.date | date: "%Y-%m-%d" }}</p>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <!-- 评论区 -->
+  {% include giscus.html %}
+
+</article>
