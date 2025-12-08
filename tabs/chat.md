@@ -1,9 +1,23 @@
 ---
-title: 匿名聊天室
+# 必须保留 layout: page，这样 Chirpy 才知道它是页面
 layout: page
-permalink: /chat/
+
+# 菜单显示的图标 (FontAwesome)，这里选个气泡图标
 icon: fas fa-comments
+
+# 决定菜单的顺序。0是Home，1是Categories... 建议设为 4 或 5
+order: 6
+
+# 菜单上显示的文字
+title: anonymous chatroom
+
+# 链接地址
+permalink: /chat/
 ---
+
+<!-- 下面继续放你的 Waline 代码，不用动 -->
+<link rel="stylesheet" ... >
+...
 
 <!-- 1. 引入 Waline 的样式文件 -->
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
