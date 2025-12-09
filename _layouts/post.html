@@ -3,26 +3,13 @@ layout: page
 refactor: true
 panel_includes:
   - toc
-tail_includes:
-  - related-posts
-  - post-nav
-  - comments
 ---
 
 <h1 data-toc-skip>{{ page.title }}</h1>
 
 <div class="post-meta text-muted">
     <div class="post-meta-line">
-      <span class="mr-1">
-        {% if page.author %}
-          {{ page.author }}
-        {% else %}
-          {{ site.social.name }}
-        {% endif %}
-      </span>
-      <span>
-        {{ page.date | date: "%Y-%m-%d" }}
-      </span>
+      <span>{{ page.date | date: "%Y-%m-%d" }}</span>
       {% if page.read_time %}
         <span class="mx-1">&bull;</span>
         <span>{{ page.read_time }} min read</span>
@@ -34,13 +21,7 @@ tail_includes:
   {{ content }}
 </div>
 
-<div class="post-tail-wrapper text-muted">
-  {% if page.tail_includes %}
-    {% for _include in page.tail_includes %}
-      {% include {{ _include }}.html %}
-    {% endfor %}
-  {% endif %}
-</div>
+<hr class="mt-5">
 
 <div class="mt-5">
   {% include giscus.html %}
