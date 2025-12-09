@@ -95,7 +95,7 @@ permalink: /chat/
     loadWaline();
   }
 
-  setInterval(autoRefresh, 10000);
+  setInterval(autoRefresh, 30000);
 
   document.getElementById('refresh-btn').addEventListener('click', function() {
     loadWaline();
