@@ -1,17 +1,55 @@
 ---
-layout: default
+layout: page
+refactor: true
+panel_includes:
+  - toc
+tail_includes:
+  - related-posts
+  - post-nav
+  - comments
 ---
 
-<article class="post">
+<h1 data-toc-skip>{{ page.title }}</h1>
 
-  <h1>{{ page.title }}</h1>
-  <p class="post-meta">{{ page.date | date: "%Y-%m-%d" }}</p>
+<div class="post-meta text-muted">
+    <!-- 作者信息 -->
+    <div class="post-meta-line">
+      <span class="mr-1">
+        {% if page.author %}
+          {{ page.author }}
+        {% else %}
+          {{ site.social.name }}
+        {% endif %}
+      </span>
+      <span>
+        {{ page.date | date: "%Y-%m-%d" }}
+      </span>
+      <!-- 阅读时间等信息 -->
+      {% if page.read_time %}
+        <span class="mx-1">&bull;</span>
+        <span>{{ page.read_time }} min read</span>
+      {% endif %}
+    </div>
+</div>
 
-  <div class="post-content">
-    {{ content }}
-  </div>
+<div class="post-content">
+  {{ content }}
+</div>
 
-  <!-- 评论区 -->
+<!-- 这里是原本 Chirpy 处理评论的地方 -->
+<!-- 如果你在 _config.yml 里配置了 Giscus，Chirpy 会自动加载 -->
+<!-- 但为了保险起见，保留你之前的手动引入（二选一即可，建议保留下面的） -->
+
+<div class="post-tail-wrapper text-muted">
+  <!-- 版权声明等尾部信息 -->
+  {% if page.tail_includes %}
+    {% for include in page.tail_includes %}
+      {% include {{ include }}.html %}
+    {% endfor %}
+  {% endif %}
+</div>
+
+<!-- ★★★ 你之前添加的 Giscus 代码 ★★★ -->
+<div class="mt-5">
   {% include giscus.html %}
-
-</article>
+</div>
