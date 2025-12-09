@@ -3,12 +3,12 @@ layout: default
 ---
 
 <div class="post-wrapper">
-  <!-- 侧边栏目录 -->
+  <!-- Sidebar Table of Contents -->
   <aside class="sidebar">
     {% include post-toc.html %}
   </aside>
 
-  <!-- 文章主体 -->
+  <!-- Post content -->
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">{{ page.title }}</h1>
@@ -24,28 +24,28 @@ layout: default
       {{ content }}
     </div>
 
-    <!-- 文章尾部 -->
+    <!-- Post footer -->
     <footer class="post-footer">
       <hr>
 
-      <!-- Giscus 评论区 -->
+      <!-- Giscus comments -->
       <section id="comments">
         {% include giscus.html %}
       </section>
 
-      <!-- Waline 匿名聊天室 -->
+      <!-- Waline anonymous chat -->
       <section id="waline">
         <div id="waline"></div>
         <script src="https://unpkg.com/@waline/client@v3/dist/waline.js"></script>
         <script>
           Waline.init({
             el: '#waline',
-            serverURL: 'https://你的-vercel-部署地址.vercel.app/',
+            serverURL: 'https://your-vercel-deployment.vercel.app/',
             locale: {
-              placeholder: '在这里输入内容，可以匿名哦~'
+              placeholder: 'Type here, anonymous is allowed'
             },
             comment: true,
-            reaction: true,
+            reaction: true
           });
         </script>
       </section>
