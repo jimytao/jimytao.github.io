@@ -1,28 +1,54 @@
 ---
-layout: page
-refactor: true
-panel_includes:
-  - toc
+layout: default
 ---
 
-<h1 data-toc-skip>{{ page.title }}</h1>
+<div class="post-wrapper">
+  <!-- 侧边栏目录 -->
+  <aside class="sidebar">
+    {% include post-toc.html %}
+  </aside>
 
-<div class="post-meta text-muted">
-    <div class="post-meta-line">
-      <span>{{ page.date | date: "%Y-%m-%d" }}</span>
-      {% if page.read_time %}
-        <span class="mx-1">&bull;</span>
-        <span>{{ page.read_time }} min read</span>
-      {% endif %}
+  <!-- 文章主体 -->
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <p class="post-meta">
+        {{ page.date | date: "%Y-%m-%d" }}
+        {% if page.author %}
+          · {{ page.author }}
+        {% endif %}
+      </p>
+    </header>
+
+    <div class="post-content">
+      {{ content }}
     </div>
-</div>
 
-<div class="post-content">
-  {{ content }}
-</div>
+    <!-- 文章尾部 -->
+    <footer class="post-footer">
+      <hr>
 
-<hr class="mt-5">
+      <!-- Giscus 评论区 -->
+      <section id="comments">
+        {% include giscus.html %}
+      </section>
 
-<div class="mt-5">
-  {% include giscus.html %}
+      <!-- Waline 匿名聊天室 -->
+      <section id="waline">
+        <div id="waline"></div>
+        <script src="https://unpkg.com/@waline/client@v3/dist/waline.js"></script>
+        <script>
+          Waline.init({
+            el: '#waline',
+            serverURL: 'https://你的-vercel-部署地址.vercel.app/',
+            locale: {
+              placeholder: '在这里输入内容，可以匿名哦~'
+            },
+            comment: true,
+            reaction: true,
+          });
+        </script>
+      </section>
+    </footer>
+  </article>
 </div>
