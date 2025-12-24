@@ -822,9 +822,16 @@ Just My Socks： 搬瓦工官方机场（适合小白，防封锁）<https://jus
 
 ChatGPT (OpenAI)： 综合能力最强。
 
+>[chatgpt]<https://chatgpt.com/>
+
 Gemini (Google)： 谷歌出品，信息库更新快。
 
+>[Gemini]<https://gemini.google.com/>
+>[google ai studio]<https://aistudio.google.com/>
+
 DuckDuckGo： 搜索引擎，隐私保护首选。
+
+>[duckduckgo](https://duckduckgo.com/)
 
 ### 4. 安全软件清单（请加入白名单或替换）
 
@@ -832,4 +839,10 @@ DuckDuckGo： 搜索引擎，隐私保护首选。
 
 浏览器： Chrome, Edge, Firefox, Brave，duckduckgo。
 
+>[google search engine](https://www.google.com/)
+>[chrome download link](https://www.google.com/chrome/)
+
 聊天软件： Telegram (注意隐私设置), Signal，WhatsApp。
+
+>[telegram](https://telegram.org/)
+>[Whatsapp](https://www.whatsapp.com/)
