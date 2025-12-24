@@ -827,6 +827,7 @@ ChatGPT (OpenAI)： 综合能力最强。
 Gemini (Google)： 谷歌出品，信息库更新快。
 
 >[Gemini]<https://gemini.google.com/>
+>
 >[google ai studio]<https://aistudio.google.com/>
 
 DuckDuckGo： 搜索引擎，隐私保护首选。
@@ -839,10 +840,68 @@ DuckDuckGo： 搜索引擎，隐私保护首选。
 
 浏览器： Chrome, Edge, Firefox, Brave，duckduckgo。
 
->[google search engine](https://www.google.com/)
->[chrome download link](https://www.google.com/chrome/)
+>[google search engine]<https://www.google.com/>
+>
+>[chrome download link]<https://www.google.com/chrome/>
 
 聊天软件： Telegram (注意隐私设置), Signal，WhatsApp。
 
->[telegram](https://telegram.org/)
->[Whatsapp](https://www.whatsapp.com/)
+>[telegram]<https://telegram.org/>
+>
+>[Whatsapp]<https://www.whatsapp.com/>
+
+## Reference
+
+[Bandai Namco Festival（上海）大槻真希演出现场灯光/音响被切断（报道汇总之一，CNA 西语）](https://www.cna.com.tw/news/amov/202511290225.aspx)
+
+[浜崎あゆみ上海演唱会/“空场唱完”等争议（ABC News 报道）](https://www.abc.net.au/news/2025-11-30/ayumi-hamasaki-says-shanghai-concert-axed-over-politics/104754898)
+
+[同事件另一家媒体报道（El País 英文版）](https://english.elpais.com/culture/2025-11-30/hamasaki-ayumi-performs-at-empty-arena-in-shanghai-as-concert-canceled-over-political-speech.html)
+
+[Reuters（中国取消日本音乐人演出，点名 Yoshio Suzuki、KOKIA、KID FRESINO 等，2025-11-21）](https://www.reuters.com/world/china/china-scraps-concerts-with-japanese-musicians-diplomatic-tensions-mount-2025-11-21/)
+
+
+[Skift（12月约1900航班取消的旅游行业视角，2025-12-03）](https://skift.com/2025/12/03/travel-cost-of-the-china-japan-standoff-1900-flights-scrapped-and-more/)
+
+
+[水产厅白皮书（2019 年水产出口额 2,873 亿日元的官方页面，日文）](https://www.jfa.maff.go.jp/j/kikaku/wpaper/r01_h/trend/1/t1_4_4.html)
+
+[JETRO（2019 年日本农林水产物与食品出口动向，含水产物 2,873 亿日元）PDF](https://www.jetro.go.jp/ext_images/industry/foods/export_data/pdf/country_201912_rev.pdf)
+
+[JETRO：明确写到“2024 年对华水产出口额同比 -89.9% 至 61 亿日元”（2025-06-02）](https://www.jetro.go.jp/biznews/2025/06/404c5e45a4ce402c.html)
+
+[JETRO：日本扇贝加工转移与越南加工企业调研（含：2023 对越出口 8 亿日元；2024 106 亿日元）](https://www.jetro.go.jp/news/releases/2025/5aeb24ee2504c44c.html)
+
+[Reuters：日本 2024 年农林水产物与食品出口创新高、并提到中国禁令背景（2025-02-04）](https://www.reuters.com/markets/asia/japans-2024-food-exports-hit-record-high-despite-chinas-seafood-import-bans-2025-02-04/)
+
+
+[瑞士驻华使馆官方推文（“Looking for Wilson Edwards…”）](https://x.com/SwissEmbChina/status/1425042973289504770)
+
+
+**Wikipedia：Death of Wei Zexi**（条目汇总，含监管调查与百度整改）：
+  
+<https://en.wikipedia.org/wiki/Death_of_Wei_Zexi>
+
+[NPR/WUNC（BPR 转载）：China opens investigation into Baidu after student’s death（2016-05-03）](https://www.bpr.org/2016-05-03/china-opens-investigation-into-search-engine-baidu-after-students-death)
+
+
+[Google 官方博客：A new approach to China（2010-01-12，首次公开谈到攻击与审查问题）](https://googleblog.blogspot.com/2010/01/new-approach-to-china.html)
+
+[Google Public Policy Blog：A new approach to China: an update（2010-03-23，停止审查、转向香港）](https://publicpolicy.googleblog.com/2010/03/new-approach-to-china-update.html)
+
+
+[Tor Project：关于 GFW 对 Tor 的探测/封锁机制的技术说明（Detecting censorship of vanilla Tor）](https://blog.torproject.org/detecting-censorship-vanilla-tor/)
+
+[arXiv：关于中国 DNS 注入/污染的经典研究（Keyword-based Filtering… via DNS Injection）](https://arxiv.org/abs/0906.4929)
+
+[USENIX Security 论文（与中国网络审查/干扰测量相关的研究之一，PDF）](https://www.usenix.org/system/files/conference/usenixsecurity13/sec13-paper_hoang.pdf)
+
+[一个整理 DNS 注入攻击材料的开源项目（可做进一步延伸阅读）](https://github.com/TheDuckProject/dns-injection-attack-china)
+
+
+[“请不要公开”搜狗键盘加密漏洞导致按键被网络窃听](https://citizenlab.ca/2023/08/vulnerabilities-in-sogou-keyboard-encryption/)
+
+[我们聊天，他们看.国际用户如何无意中构建微信的中国审查机制](https://citizenlab.ca/2020/05/we-chat-they-watch/)
+
+
+[2013年《南方周末》新年特刊事件（也称新年献词事件）](https://zh.wikipedia.org/wiki/2013%E5%B9%B4%E3%80%8A%E5%8D%97%E6%96%B9%E5%91%A8%E6%9C%AB%E3%80%8B%E6%96%B0%E5%B9%B4%E7%89%B9%E5%88%8A%E4%BA%8B%E4%BB%B6)
