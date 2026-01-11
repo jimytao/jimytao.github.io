@@ -1,7 +1,7 @@
 ---
 title: "视频分享：我不爱国——一个引人深思的话题"
 date: 2026-01-11 12：00：00 +08：00
-categories： [分享]
+categories: [分享]
 tags: [爱国]
 ---
 
@@ -14,13 +14,15 @@ tags: [爱国]
 ---
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe 
-    src="https://youtu.be/J-syYAtyaxM?si=oQUct3m6x8HuarMt"
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/J-syYAtyaxM&t=12s"
     style="position: absolute; top:0; left:0; width:100%; height:100%;"
     frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen>
   </iframe>
 </div>
+
 
 ---
 
