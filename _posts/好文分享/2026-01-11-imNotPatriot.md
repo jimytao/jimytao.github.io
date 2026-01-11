@@ -9,19 +9,11 @@ tags: [爱国]
 
 但是说实话，我只是被一个更加理性，更加有逻辑的思维说服了。
 
-所以我这次分享了这个彻底打开了我的思路。它让我明白到底我为什么从小除了思想品德课被老师义愤填膺的情绪影响而“稍微爱国过”那么一两秒，我似乎从来没有过爱国的情绪。
+所以我这次分享了这个彻底打开了我的思路的视频。它让我明白到底我为什么从小除了思想品德课被老师义愤填膺的情绪影响而“稍微爱国过”那么一两秒，我似乎从来没有过爱国的情绪。
 
 ---
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe
-    src="https://www.youtube.com/embed/J-syYAtyaxM&t=12s"
-    style="position: absolute; top:0; left:0; width:100%; height:100%;"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-  </iframe>
-</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/J-syYAtyaxM?si=BNHEw_xVo6r3fOHH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 ---
