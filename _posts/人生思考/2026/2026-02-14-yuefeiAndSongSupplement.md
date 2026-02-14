@@ -13,7 +13,7 @@ tags: [老蛮，岳飞，补充]
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen>
   </iframe>
-</div><img width="951" height="270" alt="image" src="https://github.com/user-attachments/assets/0ccb12cb-21f0-4d1f-8982-e0e5b4cb0db6" />
+
 
 
 在此前关于秦桧跪像与宋金议和的文章中，我曾试图剥离掉道德滤镜，从纯粹的**“资源与国力”**视角去审视那段历史。当时的结论倾向于认为：南宋作为一个流亡政权，在人口锐减、马匹匮乏、财政吃紧的客观条件下，“绍兴和议”或许是一种冷酷但理性的止损。我甚至认为，金国的铁浮屠是不可战胜的物理高墙。
