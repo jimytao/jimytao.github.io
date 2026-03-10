@@ -1,9 +1,10 @@
 ---
-title: "ielts"
+title: "ielts english writing"
 date: 2026-03-09 12:00:00 +08:00
-categories: [eng]
-tags: [eng]
+categories: [ielts]
+tags: [ielts writings]
 ---
+
 # 雅思 Task 1 — 全图表类型套用模板手册
 
 > **使用说明**：`[X]` = 填入具体内容。每套模板结构为 **Introduction → Overview → Body 1 → Body 2**，字数目标 **150–180词**。
