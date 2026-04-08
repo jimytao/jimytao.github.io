@@ -1,4 +1,4 @@
-<img width="1619" height="942" alt="image" src="https://github.com/user-attachments/assets/b335dc40-645b-4dbf-9534-725d9df8ccf2" />---
+---
 title: "错位的“松弛感”：旧枷锁斩断后，我们迎来了不负责任的自由吗？"
 date: 2026-04-08 12:00:00 +08:00
 categories: [人生思考]
