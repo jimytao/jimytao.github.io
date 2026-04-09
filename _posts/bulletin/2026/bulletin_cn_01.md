@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "目前中国加强了对vpn翻墙工具的严厉管控"
 date: 2026-04-09 10:00:00 +08:00
 categories: [bulletin]
 tags: [GFW restriction]
