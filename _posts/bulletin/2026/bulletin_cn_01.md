@@ -2,7 +2,7 @@
 title: "目前中国加强了对vpn翻墙工具的严厉管控"
 date: 2026-04-09 10:00:00 +08:00
 categories: [bulletin]
-tags: [GFW restriction]
+tags: [GFW_restriction]
 ---
 
 突发重磅❗️工信部紧急通知三大运营商防堵VPN翻墙
