@@ -26,7 +26,4 @@ tags: [GFW restriction]
 
 <https://x.com/IngWeilai/status/2041075090633163043?s=20>
 
-![photo](https://x.com/CDTChinese/status/2041930400076067305/photo/1)
-
-
-
+<https://x.com/CDTChinese/status/2041930400076067305?s=20>
