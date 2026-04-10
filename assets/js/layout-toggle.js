@@ -1,6 +1,8 @@
 (function () {
-  // Only activate on true desktop: precise pointer (mouse/trackpad) + hover support + wide screen
-  if (!window.matchMedia('(pointer: fine) and (hover: hover) and (min-width: 1200px)').matches) return;
+  // Only activate on pointer devices (mouse/trackpad) with hover support.
+  // Sidebar is visible at >=992px, panel at >=1200px — check the lower bound here;
+  // the panel toggle is further guarded by CSS (display:none below 1200px).
+  if (!window.matchMedia('(pointer: fine) and (hover: hover) and (min-width: 992px)').matches) return;
 
   var SIDEBAR_KEY = 'sidebar-collapsed';
   var PANEL_KEY = 'panel-hidden';

@@ -100,17 +100,20 @@ body.layout-toggle-init main[aria-label="Main Content"] {
   transition: none !important;
 }
 
-/* Hide buttons on touch/mobile devices or small screens.
-   Only show on true desktop: mouse pointer + hover support + min 1200px. */
+/* Default hidden on touch/mobile. Show only on pointer devices.
+   Sidebar appears at lg (992px), panel appears at xl (1200px) — use separate breakpoints. */
 #sidebar-toggle,
 #panel-toggle {
   display: none !important;
 }
 
-@media (pointer: fine) and (hover: hover) and (min-width: 1200px) {
+@media (pointer: fine) and (hover: hover) and (min-width: 992px) {
   #sidebar-toggle {
     display: flex !important;
   }
+}
+
+@media (pointer: fine) and (hover: hover) and (min-width: 1200px) {
   #panel-toggle {
     display: flex !important;
   }
