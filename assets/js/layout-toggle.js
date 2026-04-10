@@ -1,6 +1,6 @@
 (function () {
-  // Only activate on desktop (xl breakpoint >= 1200px)
-  if (window.innerWidth < 1200) return;
+  // Only activate on true desktop: precise pointer (mouse/trackpad) + hover support + wide screen
+  if (!window.matchMedia('(pointer: fine) and (hover: hover) and (min-width: 1200px)').matches) return;
 
   var SIDEBAR_KEY = 'sidebar-collapsed';
   var PANEL_KEY = 'panel-hidden';

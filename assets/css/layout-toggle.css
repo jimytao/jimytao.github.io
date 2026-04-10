@@ -100,11 +100,19 @@ body.layout-toggle-init main[aria-label="Main Content"] {
   transition: none !important;
 }
 
-/* Hide both buttons on non-desktop (below xl breakpoint) */
-@media (max-width: 1199px) {
-  #sidebar-toggle,
+/* Hide buttons on touch/mobile devices or small screens.
+   Only show on true desktop: mouse pointer + hover support + min 1200px. */
+#sidebar-toggle,
+#panel-toggle {
+  display: none !important;
+}
+
+@media (pointer: fine) and (hover: hover) and (min-width: 1200px) {
+  #sidebar-toggle {
+    display: flex !important;
+  }
   #panel-toggle {
-    display: none !important;
+    display: flex !important;
   }
 }
 
