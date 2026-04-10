@@ -1,4 +1,7 @@
 (function () {
+  // Only activate on desktop (xl breakpoint >= 1200px)
+  if (window.innerWidth < 1200) return;
+
   var SIDEBAR_KEY = 'sidebar-collapsed';
   var PANEL_KEY = 'panel-hidden';
 
@@ -8,78 +11,6 @@
   var panelWrapper = document.getElementById('panel-wrapper');
   var mainWrapper = document.getElementById('main-wrapper');
   var mainContent = document.querySelector('main[aria-label="Main Content"]');
-
-  // ---------- Panel toggle positioning ----------
-
-  // Horizontal: weld the button's LEFT edge to the panel wrapper's LEFT
-  // edge, so the button sits INSIDE the panel (right of the divider) and
-  // sticks out to the right into the panel area — never intruding on the
-  // main content. When the panel collapses to width 0 its left edge snaps
-  // to the viewport's right edge, so we clamp the button's left so it
-  // hugs the viewport edge instead of overflowing offscreen.
-  function updatePanelToggleHoriz() {
-    if (!panelToggle || !panelWrapper) return;
-    var rect = panelWrapper.getBoundingClientRect();
-    var vw = document.documentElement.clientWidth;
-    var btnW = panelToggle.offsetWidth || 26;
-    var leftCss = rect.left;
-    var maxLeft = vw - btnW;
-    if (leftCss > maxLeft) leftCss = maxLeft;
-    if (leftCss < 0) leftCss = 0;
-    panelToggle.style.left = leftCss + 'px';
-    panelToggle.style.right = 'auto';
-  }
-
-  // Vertical: center the button between the two sections inside .access.
-  // ONLY called from scroll updates — never during panel toggle — so that
-  // collapsing/expanding the panel is a pure horizontal motion and the
-  // button never drops to the viewport center mid-animation.
-  function updatePanelToggleVert() {
-    if (!panelToggle) return;
-    var targetTop;
-    if (body.classList.contains('panel-hidden') || !panelWrapper) {
-      targetTop = window.innerHeight / 2;
-    } else {
-      var sections = panelWrapper.querySelectorAll('.access > section');
-      if (sections.length >= 2) {
-        var r1 = sections[0].getBoundingClientRect();
-        var r2 = sections[1].getBoundingClientRect();
-        if ((r1.height === 0 && r2.height === 0) || (r1.bottom === 0 && r2.top === 0)) {
-          targetTop = window.innerHeight / 2;
-        } else {
-          targetTop = (r1.bottom + r2.top) / 2;
-        }
-      } else {
-        targetTop = window.innerHeight / 2;
-      }
-      // Clamp inside viewport so the button never gets clipped off-screen
-      var pad = 40;
-      if (targetTop < pad) targetTop = pad;
-      if (targetTop > window.innerHeight - pad) targetTop = window.innerHeight - pad;
-    }
-    panelToggle.style.top = targetTop + 'px';
-  }
-
-  // Run a short rAF loop that continuously re-reads the panel's real
-  // bounding rect and pins the button to it. This is how we "weld" the
-  // button to the panel during the CSS width transition: no matter what
-  // curve the panel's width follows, the button follows the same curve
-  // because it reads the same source of truth each frame.
-  var weldRaf = null;
-  function weldPanelToggleHoriz(durationMs) {
-    if (weldRaf !== null) cancelAnimationFrame(weldRaf);
-    var start = performance.now();
-    function tick() {
-      updatePanelToggleHoriz();
-      if (performance.now() - start < durationMs) {
-        weldRaf = requestAnimationFrame(tick);
-      } else {
-        weldRaf = null;
-        updatePanelToggleHoriz(); // final settle
-      }
-    }
-    weldRaf = requestAnimationFrame(tick);
-  }
 
   // ---------- Sidebar collapse ----------
 
@@ -98,9 +29,6 @@
       if (sidebarToggle) sidebarToggle.title = '收起菜单';
       localStorage.setItem(SIDEBAR_KEY, '0');
     }
-    // Sidebar collapse shifts the main layout horizontally, which moves
-    // the panel's left edge. Weld the button to it during the shift.
-    weldPanelToggleHoriz(340);
   }
 
   // ---------- Panel hide ----------
@@ -111,44 +39,28 @@
       body.classList.add('panel-hidden');
       if (panelWrapper) panelWrapper.classList.add('panel-hidden');
       if (mainContent) { mainContent.style.marginLeft = 'auto'; mainContent.style.marginRight = 'auto'; }
-      if (icon) icon.classList.replace('fa-angle-double-right', 'fa-angle-double-left');
+      if (icon) { icon.classList.remove('fa-eye'); icon.classList.add('fa-eye-slash'); }
       if (panelToggle) panelToggle.title = '显示右侧栏';
       localStorage.setItem(PANEL_KEY, '1');
     } else {
       body.classList.remove('panel-hidden');
       if (panelWrapper) panelWrapper.classList.remove('panel-hidden');
       if (mainContent) { mainContent.style.marginLeft = ''; mainContent.style.marginRight = ''; }
-      if (icon) icon.classList.replace('fa-angle-double-left', 'fa-angle-double-right');
+      if (icon) { icon.classList.remove('fa-eye-slash'); icon.classList.add('fa-eye'); }
       if (panelToggle) panelToggle.title = '隐藏右侧栏';
       localStorage.setItem(PANEL_KEY, '0');
     }
-    // Horizontal-only weld: track the panel's left edge every frame for
-    // the duration of the CSS width transition. Vertical is deliberately
-    // NOT touched — it stays at whatever value the scroll handler last
-    // set, so the toggle is a pure horizontal motion.
-    weldPanelToggleHoriz(340);
   }
 
   // ---------- Init ----------
 
-  // Suppress transitions while we apply persisted state and compute the
-  // first position — avoids a flash from CSS defaults to the real values.
   body.classList.add('layout-toggle-init');
 
-  // Restore persisted state. These calls would normally kick off the
-  // weld rAF, but with transitions suppressed by the init class nothing
-  // actually animates — the final positions are applied directly.
   setSidebarCollapsed(localStorage.getItem(SIDEBAR_KEY) === '1');
   if (localStorage.getItem(PANEL_KEY) === '1' && panelWrapper) {
     setPanelHidden(true);
   }
 
-  // Initial placement
-  updatePanelToggleHoriz();
-  updatePanelToggleVert();
-
-  // Two rAFs to ensure layout has been painted with transitions off
-  // before we re-enable them.
   requestAnimationFrame(function () {
     requestAnimationFrame(function () {
       body.classList.remove('layout-toggle-init');
@@ -168,21 +80,4 @@
       setPanelHidden(!body.classList.contains('panel-hidden'));
     });
   }
-
-  window.addEventListener('resize', function () {
-    updatePanelToggleHoriz();
-    updatePanelToggleVert();
-  });
-
-  // Scroll: update vertical only — .access is sticky, so its on-screen
-  // position (and the gap between sections) moves with scroll until it
-  // becomes stuck. rAF-throttled to avoid layout thrash.
-  var scrollRaf = null;
-  window.addEventListener('scroll', function () {
-    if (scrollRaf !== null) return;
-    scrollRaf = requestAnimationFrame(function () {
-      updatePanelToggleVert();
-      scrollRaf = null;
-    });
-  }, { passive: true });
 })();

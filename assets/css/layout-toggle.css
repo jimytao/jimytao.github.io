@@ -1,5 +1,6 @@
 /* =====================================================
    Layout Toggle: Sidebar collapse & Panel hide
+   Only rendered on xl (>=1200px) desktop screens.
    ===================================================== */
 
 /* --- Sidebar toggle tab (fixed, hugs right edge of sidebar) --- */
@@ -60,37 +61,26 @@ main[aria-label="Main Content"] {
   transition: margin-left 0.3s ease, margin-right 0.3s ease;
 }
 
-/* --- Panel toggle tab ---
-   Position is driven entirely by JS via requestAnimationFrame during
-   the collapse animation. Every frame, JS reads the panel wrapper's
-   real bounding rect and aligns the button's right edge to it — so
-   the button is perfectly welded to the panel's left edge regardless
-   of flex layout quirks or transition curve differences. */
+/* --- Panel eye toggle (fixed, top-right corner) --- */
 #panel-toggle {
   position: fixed;
-  top: 50vh;                /* JS overrides */
-  left: 0;                  /* JS overrides immediately */
-  right: auto;
-  transform: translateY(-50%);
-  z-index: 1000;
-  width: 1.6rem;
-  height: 3.2rem;
-  border-radius: 0 6px 6px 0;
+  top: 1rem;
+  right: 1.2rem;
+  z-index: 1100;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
   border: 1px solid var(--sidebar-border-color, rgba(255, 255, 255, 0.15));
-  border-left: none;
   background: var(--sidebar-bg, #1e2228);
   color: var(--sidebar-muted-color, #868686);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  /* No transition on right/top — JS writes the value every frame so
-     the button tracks the panel's actual geometry exactly. */
   transition: color 0.2s, background 0.2s, opacity 0.2s;
-  font-size: 0.75rem;
-  font-weight: 900;
+  font-size: 0.8rem;
   padding: 0;
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 #panel-toggle:hover {
@@ -99,9 +89,7 @@ main[aria-label="Main Content"] {
   color: var(--sidebar-active-color, #fff);
 }
 
-/* Suppress all layout-toggle transitions during initial setup to avoid
-   a visible flash when restoring persisted state or applying the first
-   computed position. */
+/* Suppress all layout-toggle transitions during initial setup */
 body.layout-toggle-init #panel-toggle,
 body.layout-toggle-init #panel-wrapper,
 body.layout-toggle-init #panel-content,
@@ -112,17 +100,15 @@ body.layout-toggle-init main[aria-label="Main Content"] {
   transition: none !important;
 }
 
-/* Only show on xl screens where panel is visible */
+/* Hide both buttons on non-desktop (below xl breakpoint) */
 @media (max-width: 1199px) {
+  #sidebar-toggle,
   #panel-toggle {
-    display: none;
+    display: none !important;
   }
 }
 
-/* Panel wrapper: smooth collapse transition.
-   Transition `width` (not the `flex` shorthand — browsers don't
-   reliably animate shorthand) so the panel's left edge moves on a
-   smooth, predictable curve, which the JS weld can track frame-by-frame. */
+/* Panel wrapper: smooth collapse transition */
 #panel-wrapper {
   position: relative;
   transition: width 0.3s ease, padding 0.3s ease;
