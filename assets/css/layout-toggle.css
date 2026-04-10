@@ -107,7 +107,7 @@ body.layout-toggle-init main[aria-label="Main Content"] {
   display: none !important;
 }
 
-@media (pointer: fine) and (hover: hover) and (min-width: 992px) {
+@media (pointer: fine) and (hover: hover) and (min-width: 850px) {
   #sidebar-toggle {
     display: flex !important;
   }

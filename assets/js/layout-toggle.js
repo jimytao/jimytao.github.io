@@ -2,7 +2,8 @@
   // Only activate on pointer devices (mouse/trackpad) with hover support.
   // Sidebar is visible at >=992px, panel at >=1200px — check the lower bound here;
   // the panel toggle is further guarded by CSS (display:none below 1200px).
-  if (!window.matchMedia('(pointer: fine) and (hover: hover) and (min-width: 992px)').matches) return;
+  // Chirpy's lg breakpoint is 850px (sidebar visible), xl is 1200px (panel visible)
+  if (!window.matchMedia('(pointer: fine) and (hover: hover) and (min-width: 850px)').matches) return;
 
   var SIDEBAR_KEY = 'sidebar-collapsed';
   var PANEL_KEY = 'panel-hidden';
