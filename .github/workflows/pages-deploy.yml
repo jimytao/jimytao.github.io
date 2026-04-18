@@ -45,10 +45,46 @@ jobs:
           ruby-version: 3.3
           bundler-cache: true
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install staticrypt
+        run: npm install -g staticrypt@3
+
       - name: Build site
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: "production"
+
+      - name: Encrypt protected posts
+        env:
+          BLOG_PASSWORD: ${{ secrets.BLOG_PASSWORD }}
+        run: |
+          SITE_DIR="_site${{ steps.pages.outputs.base_path }}"
+          MANIFEST="${SITE_DIR}/protected-manifest.txt"
+          if [ ! -f "$MANIFEST" ]; then echo "No protected posts found."; exit 0; fi
+          if [ -z "$BLOG_PASSWORD" ]; then echo "ERROR: BLOG_PASSWORD secret is not set."; exit 1; fi
+          TMPDIR="${SITE_DIR}/_enc_tmp"
+          while IFS= read -r url; do
+            [ -z "$url" ] && continue
+            FILE="${SITE_DIR}${url}index.html"
+            if [ -f "$FILE" ]; then
+              echo "Encrypting: $FILE"
+              mkdir -p "$TMPDIR"
+              staticrypt "$FILE" --password "$BLOG_PASSWORD" --short \
+                --template "_staticrypt_template.html" \
+                --template-title "受保护的文章" \
+                --template-instructions "请输入密码查看此文章" \
+                -d "$TMPDIR"
+              mv "$TMPDIR/index.html" "$FILE"
+            else
+              echo "WARNING: Expected file not found: $FILE"
+            fi
+          done < "$MANIFEST"
+          rm -rf "$TMPDIR"
+          rm -f "$MANIFEST"
 
       - name: Test site
         run: |

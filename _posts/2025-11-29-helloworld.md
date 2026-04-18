@@ -3,6 +3,8 @@ title: "Hello World"
 date: 2025-11-29 00:00:00 +00:00
 categories: [hello-world]
 tags: [hello-world]
+protected: true
+search: false
 ---
 
 # hello world !
